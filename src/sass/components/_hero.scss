@@ -1,0 +1,203 @@
+.hero {
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  @include tablet {
+    margin: 0 auto;
+    background-image: url(../images/bg-hero-tab.png);
+    background-repeat: no-repeat;
+    background-size: 100% 150px;
+    background-position: bottom;
+    padding-bottom: 115px;
+  }
+
+  @include desktop {
+    background-image: url(../images/bg-hero.png);
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+    background-position: bottom;
+    padding-top: 15px;
+    padding-bottom: 40px;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  & .container {
+    @include tablet {
+      position: relative;
+      display: flex;
+    }
+
+    @include desktop {
+      // justify-content: space-between;
+      column-gap: 150px;
+      align-items: center;
+    }
+  }
+}
+
+.hero__title {
+  @extend %main-title;
+}
+
+.hero__desc {
+  @extend %hero-text;
+}
+
+.hero__btn {
+  @extend %main-btn;
+}
+
+.hero__slider {
+  display: none;
+
+  @include tablet {
+    display: block;
+    position: absolute;
+    top: 89px;
+    right: 40px;
+  }
+
+  @include desktop {
+    position: static;
+  }
+}
+
+.slider {
+  display: block;
+  min-width: 0;
+  width: 320px;
+  height: 320px;
+  background-color: #fefefe;
+  border-radius: 50%;
+  border: 14px solid #ffe550;
+
+  @include desktop {
+    width: 580px;
+    height: 580px;
+    border: 26px solid #ffe550;
+  }
+}
+
+.slick-list {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.slick-arrow {
+  display: flex;
+  align-items: center;
+  width: 34px;
+  height: 28px;
+  border: none;
+  border-radius: 8px;
+  background-color: $main-bg-color;
+  box-shadow: $slide-btn-shadow;
+  z-index: 5;
+  transition: box-shadow $main-transition;
+
+  @include desktop {
+    width: 48px;
+    height: 40px;
+  }
+
+  &.slick-prev {
+    left: -22px;
+    padding-left: 9px;
+
+    &::before {
+      content: '';
+      background-image: url(../images/slider/arrow-prev-tab.svg);
+      width: 11px;
+      height: 20px;
+      opacity: 1;
+      transition: background-image $main-transition;
+    }
+
+    &:hover {
+      &::before {
+        content: '';
+        background-image: url(../images/slider/arrow-prev-hover-tab.svg);
+        width: 11px;
+        height: 20px;
+      }
+    }
+
+    @include desktop {
+      &::before {
+        content: '';
+        background-image: url(../images/slider/arrow-prev.svg);
+        width: 16px;
+        height: 29px;
+        opacity: 1;
+      }
+
+      left: -40px;
+      padding-left: 13px;
+
+      &:hover {
+        &::before {
+          content: '';
+          background-image: url(../images/slider/arrow-prev-hover.svg);
+          width: 16px;
+          height: 29px;
+        }
+      }
+    }
+  }
+
+  &.slick-next {
+    right: -22px;
+    padding-left: 14px;
+
+    &::before {
+      content: '';
+      background-image: url(../images/slider/arrow-next-tab.svg);
+      width: 11px;
+      height: 20px;
+      opacity: 1;
+      transition: background-image $main-transition;
+    }
+
+    &:hover {
+      &::before {
+        content: '';
+        background-image: url(../images/slider/arrow-next-hover-tab.svg);
+        width: 11px;
+        height: 20px;
+      }
+    }
+
+    @include desktop {
+      &::before {
+        content: '';
+        background-image: url(../images/slider/arrow-next.svg);
+        width: 16px;
+        height: 29px;
+        opacity: 1;
+      }
+
+      right: -40px;
+      padding-left: 19px;
+
+      &:hover {
+        &::before {
+          content: '';
+          background-image: url(../images/slider/arrow-next-hover.svg);
+          width: 16px;
+          height: 29px;
+        }
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-bg-color;
+  }
+
+  &:active {
+    box-shadow: $slider-btn-active;
+  }
+}

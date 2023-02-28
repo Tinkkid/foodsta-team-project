@@ -1,0 +1,192 @@
+// *{
+//     outline: 1px solid tomato;
+// }
+
+.subscribe {
+  margin-top: -44px;
+  padding-bottom: 60px;
+
+  @include mobile {
+    margin-top: -60px;
+  }
+  @include tablet {
+    margin-top: -74px;
+    display: flex;
+    flex-direction: column;
+  }
+  @include desktop {
+    margin-top: -66px;
+    flex-direction: row-reverse;
+  }
+
+  &__box {
+    margin-left: auto;
+    @include tablet {
+    }
+    @include desktop {
+    }
+  }
+
+  &__picture {
+    display: block;
+    margin-bottom: 17px;
+    background-color: rgba($color: #000000, $alpha: 0);
+
+    @include tablet {
+      margin-left: auto;
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__header {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.2;
+
+    @include tablet {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-right: auto;
+    }
+    @include desktop {
+      margin-top: 46px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+
+    color: $custom-black;
+
+    @include tablet {
+      margin-bottom: 24px;
+      font-size: 16px;
+      margin-right: auto;
+    }
+    @include desktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+    }
+    @include desktop {
+    }
+  }
+
+  &__input {
+    @include set-font(12px, 18px);
+    outline: none;
+    width: 100%;
+    height: 42px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 30px;
+    border: 0.85px solid $yellow-main;
+
+    transition: border-color $main-transition;
+
+    @include tablet {
+      width: 395px;
+      margin-bottom: 0;
+    }
+    @include desktop {
+    }
+  }
+
+  &__input:focus:not(:placeholder-shown):invalid,
+  &__input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: $alarm-color;
+  }
+
+  &__input:focus:not(:placeholder-shown):valid,
+  &__input:not(:focus):not(:placeholder-shown):valid {
+    border-color: $dark-green;
+  }
+
+  &__button {
+    margin-left: auto;
+    padding: 11px 22px;
+
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.5;
+    height: 42px;
+
+    border-radius: 30px;
+    background-color: $button-green;
+
+    transition: border-color $main-transition;
+
+    @include tablet {
+      margin-left: 22px;
+      margin-bottom: 0;
+      transition: border-color $main-transition;
+    }
+
+    @include desktop {
+      transition: $main-transition;
+    }
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $button-green-light;
+  }
+
+  &__link {
+    color: $button-green-dark;
+    @include tablet {
+    }
+
+    @include desktop {
+    }
+  }
+}
+
+.error__message {
+  display: flex;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+
+  opacity: 0;
+  color: $alarm-color;
+
+  transition: opacity $main-transition;
+  @media screen and (min-width: 768px) {
+    bottom: -18px;
+  }
+
+  .subscribe__input:focus:not(:placeholder-shown):invalid + & {
+    opacity: 1;
+  }
+
+  @include tablet {
+  }
+  @include desktop {
+  }
+}
+
+.alarm_svg {
+  margin-right: 5px;
+}
+.subscribe__error {
+  position: relative;
+}

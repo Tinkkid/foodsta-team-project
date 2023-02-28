@@ -1,0 +1,166 @@
+.offerings {
+  background-image: url('../images/offerings/rectangle_320.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: auto;
+  width: 100%;
+
+  @include mobile {
+    background-image: url('../images/offerings/rectangle_480.png');
+  }
+
+  @include tablet {
+    background-image: none;
+    padding-top: 0;
+    background-color: $yellow-main;
+    margin-top: -1px;
+  }
+
+  @include desktop {
+    padding-top: 0;
+    background-color: $yellow-main;
+    margin-top: -35px;
+    position: relative;
+  }
+
+  &--flex {
+    @include desktop {
+      @include flex-container(row, flex-end, start, null, null);
+      flex-wrap: nowrap;
+      gap: 90px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 60px;
+
+    @include desktop {
+      max-width: 550px;
+      margin-bottom: -57px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 28px;
+
+    @include tablet {
+      margin-bottom: 40px;
+      width: 526px;
+    }
+
+    @include desktop {
+      width: 500px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 28px;
+    scroll-margin-top: 130px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.18;
+    color: $custom-black;
+    text-transform: capitalize;
+
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: 42px;
+      line-height: 1.17;
+    }
+  }
+
+  &__text-primary {
+    @include tablet {
+      font-size: 16px;
+      line-height: 1.19;
+    }
+
+    @include desktop {
+      line-height: 1.5;
+    }
+  }
+
+  &__text-secondary {
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include desktop {
+      line-height: 1.5;
+    }
+  }
+
+  &__tb {
+    @include tablet {
+      margin-bottom: 40px;
+      @include flex-container(row, center, start, null, null);
+      gap: 116px;
+      flex-flow: nowrap;
+    }
+
+    @include desktop {
+      margin-bottom: 32px;
+      gap: 67px;
+    }
+  }
+
+  &__features {
+    @include less-tablet {
+      margin-bottom: 28px;
+    }
+
+    @include tablet {
+      width: 252px;
+    }
+  }
+
+  &__title-icon {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+  }
+
+  &__btn-commons {
+    @include flex-container(row, center, start, null, null);
+    gap: 24px;
+  }
+
+  &__btn {
+    @include secondary-button(10px 22px);
+  }
+
+  &__link {
+    @include flex-container(row, center, center, null, null);
+    gap: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+    color: $black;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+// Turn off images of Apples for different devices
+
+@media (max-width: 767px) {
+  .apple-tab {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: 1279px) {
+  .apple-md {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop) {
+  .apple-tab {
+    display: none;
+  }
+}

@@ -1,0 +1,61 @@
+<section class="subscribe-section">
+  <div class="subscribe container">
+    <!-- <div class="subscribe__box"> -->
+    <picture class="subscribe__picture subscribe__box">
+      <source
+        srcset="
+          ./images/banan-desk.png    1x,
+          ./images/banan-desk@2x.png 2x,
+          ./images/banan-desk@3x.png 3x
+        "
+        media="(min-width:1280px)"
+      />
+      <source
+        srcset="
+          ./images/banan-tabl.png    1x,
+          ./images/banan-tabl@2x.png 2x,
+          ./images/banan-tabl@3x.png 3x
+        "
+        media="(min-width:768px)"
+      />
+      <source
+        srcset="
+          ./images/banan-mob.png    1x,
+          ./images/banan-mob@2x.png 2x,
+          ./images/banan-mob@3x.png 3x
+        "
+        media="(min-width:320px)"
+      />
+
+      <img src="./images/banan-mob.png" alt="banan" />
+    </picture>
+    <!-- </div> -->
+    <div>
+      <h2 class="subscribe__header">Subscribe To Get Special Offers</h2>
+      <p class="subscribe__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <form class="subscribe__form" autocomplete="off" validate>
+        <div class="subscribe__error">
+          <label for="email" class="subscribe__label"> </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            class="subscribe__input"
+            required
+          />
+          <p class="error__message error_mesage-none">
+            <svg class="alarm_svg" width="11" height="11">
+              <use href="./images/icons.svg#alarm"></use>
+            </svg>
+            Not a valid email address (example@email.com)
+          </p>
+        </div>
+        <button type="submit" class="subscribe__button">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

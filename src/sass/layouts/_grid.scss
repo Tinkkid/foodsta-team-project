@@ -1,0 +1,8 @@
+@mixin grid-container($gtc, $cg: unset, $rg: unset) {
+  display: grid;
+
+  grid-template-columns: $gtc;
+
+  row-gap: $rg;
+  column-gap: $cg;
+}

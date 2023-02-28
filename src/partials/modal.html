@@ -1,0 +1,62 @@
+<div class="backdrop">
+    <form class="modal" autocomplete="off">
+        <button class="modal__close-button" type="button">
+            <svg class="modal__close-button-ico">
+                <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+        </button>
+
+        <fieldset class="modal__fieldset">
+            <legend class="modal__legend">Order Form</legend>
+
+            <div class="modal__input-container">
+                <label class="modal__input-label" for="name">Name</label>
+                <input class="modal__text-input" type="text" id="name" placeholder="Your name" minlength="3" maxlength="25" required>
+                <div class="modal__warning-container">
+                    <svg class="warning-ico">
+                        <use href="./images/icons.svg#alarm"></use>
+                    </svg>
+                    <div class="modal__warning-text-container">
+                        <p class="modal__warning-message">The name must be between 3 and 25 characters</p>
+                        <p class="modal__warning-message modal__warning-message--error">This field is required</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__input-container">
+                <label class="modal__input-label" for="phone">Phone number</label>
+                <input class="modal__text-input" type="tel" id="phone" placeholder="+38(0_ _) _ _ _   _ _   _ _" minlength="10" maxlength="13" required>
+                <div class="modal__warning-container">
+                    <svg class="warning-ico">
+                        <use href="./images/icons.svg#alarm"></use>
+                    </svg>
+                    <div class="modal__warning-text-container">
+                        <p class="modal__warning-message">This phone must be in the format  099 000 00 00</p>
+                        <p class="modal__warning-message modal__warning-message--error">This field is required</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__input-container">
+                <label class="modal__input-label" for="mail">E-mail</label>
+                <input class="modal__text-input" type="email" id="mail" placeholder="example@gmail.com" required>
+                <div class="modal__warning-container">
+                    <svg class="warning-ico">
+                        <use href="./images/icons.svg#alarm"></use>
+                    </svg>
+                    <div class="modal__warning-text-container">
+                        <p class="modal__warning-message">Please enter a valid email address</p>
+                        <p class="modal__warning-message modal__warning-message--error">This field is required</p>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="modal__button-container">
+            <div class="modal__button-warning">
+                All fields are required
+            </div>
+            <button class="modal__button" type="submit">Send</button>
+        </div>
+    </form>
+</div>

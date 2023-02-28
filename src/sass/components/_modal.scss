@@ -1,0 +1,236 @@
+.backdrop {
+    z-index: 15;
+
+    position: fixed;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: $backdrop-color;
+
+    transition: transform $modal-transition;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+
+    width: 100%;
+    max-width: $modal-width-small;
+    padding: 32px 20px;
+
+    border-radius: 30px;
+    background-color: $modal-bg-color;
+
+    @media screen and (max-height: 520px) {
+        max-height: 95vh;
+    }
+    @include tablet {
+        max-width: $modal-width-big;
+    }
+}
+
+.modal__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    border: 1px solid $main-bg-color;
+    background-color: $main-bg-color;
+
+    transition: border-color $modal-transition,
+        color $modal-transition;
+
+    &:hover,
+    &:focus {
+        color: $dark-green;
+        border-color: $dark-green;
+    }
+}
+
+.modal__close-button-ico {
+    width: 24px;
+    height: 24px;
+}
+
+.modal__fieldset {
+    padding: 0;
+    margin: 0;
+
+    border: none;
+}
+
+.modal__legend {
+    margin: 0 auto 20px;
+
+    @include set-font(24px, 28.8px);
+    font-weight: 700;
+}
+
+.modal__input-container {
+    position: relative;
+
+    @include flex-container(column, normal, normal);
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.modal__input-label {
+    margin-left: 12px;
+    margin-bottom: 2px;
+
+    @include set-font(16px, 22.4px);
+    font-weight: 500;
+}
+
+.modal__text-input {
+    z-index: 16;
+
+    padding: 13px 11px;
+    border-radius: 30px;
+
+    @include set-font(16px, 20px);
+
+    border: 1px solid $modal-input-border-normal-color;
+    box-shadow: $modal-input-shadow;
+    outline: none;
+
+    transition: border-color $modal-transition;
+
+    &::placeholder {
+        color: $modal-input-placeholder-color;
+    }
+
+    &:valid {
+        border-color: $dark-green;
+    }
+
+    .modal__fieldset:focus-within:invalid &:invalid {
+        border-color: $alarm-color;
+    }
+}
+
+.modal__warning-container {
+    position: absolute;
+    bottom: 30%;
+    transform: translateY(50%);
+
+    @include flex-container(row, center, normal);
+
+    margin-left: 12px;
+    opacity: 1;
+
+    transition: bottom $modal-transition;
+
+    .modal__fieldset:focus-within:invalid .modal__text-input:invalid+& {
+        bottom: -8px;
+    }
+}
+
+.warning-ico {
+    width: 12px;
+    height: 12px;
+}
+
+.modal__warning-text-container {
+    position: relative;
+}
+
+.modal__warning-message {
+    margin: 0 0 0 4px;
+
+    @include set-font(11px, 15.4px);
+    font-weight: 500;
+
+    color: $alarm-color;
+
+    transition: opacity $modal-transition;
+
+    &--error {
+        position: absolute;
+        top: 0;
+
+        opacity: 0;
+
+        @include set-font(13px, 18.2px);
+    }
+}
+
+.modal__button-container {
+    position: relative;
+}
+
+.modal__button {
+    @include primary-button(9px 37px);
+
+    margin: 32px auto 0;
+
+    background-color: $white;
+    border: 2px $dark-green solid;
+
+    transition: border-color $modal-transition,
+        background-color $modal-transition;
+
+    .modal__fieldset:focus-within:invalid+.modal__button-container & {
+        border-color: $alarm-color;
+    }
+
+    .modal__fieldset:invalid+.modal__button-container &:hover,
+    .modal__fieldset:invalid+.modal__button-container &:focus {
+        background-color: $modal-button-alarm-color;
+    }
+
+    .modal__fieldset:valid+.modal__button-container & {
+        background-color: $button-green;
+    }
+}
+
+.modal__button-warning {
+    z-index: 16;
+
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    min-width: 165px;
+    padding: 16px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    @include set-font(14px, 16px);
+    font-weight: 500;
+    color: $modal-button-alarm-font-color;
+
+    text-align: center;
+    border-radius: 30px;
+    background-color: $modal-button-alarm-color;
+
+    transition: opacity $modal-transition;
+
+    &::after {
+        content: url("../images/button-warning-tail.svg");
+
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 23px;
+        height: 7px;
+    }
+}

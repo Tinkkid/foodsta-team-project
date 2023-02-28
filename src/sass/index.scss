@@ -1,0 +1,36 @@
+// скидання
+
+@import './utils/my-reset';
+
+// брейпоїнти й перемінні
+
+@import './utils/breakpoints';
+@import './utils/vars';
+@import './utils/my-reset';
+
+
+// міксіни плейсхолдери
+
+@import './utils/mixins';
+@import './utils/placeholders';
+
+// загальні стилі
+
+@import './common';
+
+// лейаути для флекс/грід контейнерів
+
+@import './layouts/flex';
+@import './layouts/grid';
+
+// паршали
+
+@import './components/header';
+@import './components/logo';
+@import './components/hero';
+@import './components/offerings';
+@import './components/favorites';
+@import './components/customers';
+@import './components/subscribe';
+@import './components/footer';
+@import './components/modal';

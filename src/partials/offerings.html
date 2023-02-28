@@ -1,0 +1,77 @@
+<section class="section offerings">
+  <div class="container offerings--flex">
+    <div class="offerings__img">
+      <!-- Image for mobile and desktop -->
+      <img
+        class="apple-md"
+        srcset="
+          ./images/offerings/apple-mob.png      280w,
+          ./images/offerings/apple-mob@2x.png   560w,
+          ./images/offerings/apple-mob@3x.png   840w,
+          ./images/offerings/apple-desk.png     550w,
+          ./images/offerings/apple-desk@2x.png 1100w,
+          ./images/offerings/apple-desk@3x.png 1650w
+        "
+        sizes="(min-width:1280px) 550w"
+        src="./images/offerings/apple-mob.png"
+        alt="green apple"
+      />
+      <!-- Image for tablet -->
+      <img
+        class="apple-tab"
+        srcset="
+          ./images/offerings/apple-tab.png     704w,
+          ./images/offerings/apple-tab@2x.png 1408w,
+          ./images/offerings/apple-tab@3x.png 2112w
+        "
+        sizes="(min-width:768px) 704w"
+        src="./images/offerings/apple-tab.png"
+        alt="green apple"
+      />
+    </div>
+
+    <div>
+      <div class="offerings__label">
+        <h2 class="offerings__title" id="about">What’s Special About Our Offerings</h2>
+        <p class="offerings__text-primary">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+          elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+          commodo diam libero vitae erat.
+        </p>
+      </div>
+
+      <div class="offerings__tb">
+        <div class="offerings__features">
+          <svg width="48" height="48">
+            <use href="./images/offerings/sprite-icons.svg#rocket"></use>
+          </svg>
+          <h3 class="offerings__title-icon">Fastest Delivery</h3>
+          <p class="offerings__text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+            eros.
+          </p>
+        </div>
+        <div class="offerings__features">
+          <svg width="48" height="48">
+            <use href="./images/offerings/sprite-icons.svg#order"></use>
+          </svg>
+          <h3 class="offerings__title-icon">Easy to order</h3>
+          <p class="offerings__text-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in
+            eros.
+          </p>
+        </div>
+      </div>
+
+      <div class="offerings__btn-commons">
+        <button class="offerings__btn modal-open-button" type="button">Order Now</button>
+        <div class="offerings__link">
+          <a href="#">Read More </a>
+          <svg class="offerings__arrow-right" width="14" height="14">
+            <use href="./images/offerings/sprite-icons.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

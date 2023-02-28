@@ -1,0 +1,243 @@
+//________________________background________________
+.footer {
+  @include less-tablet {
+    background-image: url(/src/images/footer/mobail-bg/1.png),
+      url(/src/images/footer/mobail-bg/2.png), url(/src/images/footer/mobail-bg/3.png);
+    background-repeat: no-repeat;
+    background-position: top right, 0 132px, bottom;
+  }
+
+  box-shadow: 0px -4px 24px rgba(105, 105, 105, 0.102);
+
+  @include min-max-width($tablet, calc($desktop - 1px)) {
+    background-image: url(/src/images/footer/bg-tablet.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 100% auto;
+  }
+
+  @include desktop {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: calc($desktop - (100vw - 100%));
+      height: 100%;
+
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-image: url(/src/images/footer/bg-desctop.png);
+      background-size: 1211px;
+      background-repeat: no-repeat;
+      background-position: bottom right 16px;
+    }
+
+    &.section {
+      @include desktop {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+  }
+}
+
+//_________________________NAVIGATION____________________________
+.footer__navigation {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-bottom: 60px;
+
+  @include tablet {
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  @include desktop {
+    margin-bottom: 80px;
+    align-items: flex-start;
+  }
+}
+
+.footer__nav {
+  margin-left: 81px;
+
+  @media screen and (max-width: 767px) {
+    width: 85px;
+  }
+
+  @include tablet {
+    margin-left: 114px;
+  }
+
+  @include desktop {
+    margin-left: 148px;
+  }
+}
+
+.nav__link--footer {
+  @include set-font(14px, 16px);
+  padding: 10px 0;
+
+  @include tablet {
+    padding: 17px 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    content: none;
+  }
+}
+
+// _________________________SUBSCRIB____________________________________________
+.footer__subscribe {
+  display: block;
+
+  @media screen and (max-width: 1279px) {
+    margin-top: 30px;
+    flex-grow: 2;
+  }
+
+  @include desktop {
+    margin-left: auto;
+  }
+}
+
+.subscribe__name {
+  margin-bottom: 12px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.subscribe__button {
+  &--footer {
+    @include tablet {
+      margin-left: 13px;
+    }
+
+    background-color: $white;
+    border: 1px solid $dark-green;
+    border-radius: 30px;
+
+    color: inherit;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5384;
+
+    @media screen and (min-width: $desktop) {
+      transition: background-color $main-transition;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $yellow-main;
+    }
+  }
+}
+
+.subscribe__form--footer {
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 12px;
+  }
+}
+
+.subscribe__input--footer {
+  @include tablet {
+    margin-bottom: 0;
+    width: 279px;
+  }
+}
+
+.subscribe__privacy-text {
+  font-size: 12px;
+  line-height: 1.16;
+}
+
+.subscribe__privacy-link {
+  display: inline-block;
+  position: relative;
+  color: $dark-green;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    height: 0.5px;
+    width: 100%;
+    background-color: $dark-green;
+  }
+}
+
+// _______________КОПІРАЙТ________________________
+.footer__copyright {
+  flex: 1 1 auto;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  @include desktop {
+    flex-grow: 1;
+  }
+}
+
+.copyright__list {
+  display: flex;
+  justify-content: space-around;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+}
+
+.copyright__item {
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.copyright__link {
+  transition: color $main-transition;
+
+  display: inline-block;
+  position: relative;
+  color: $dark-green;
+  font-size: 10px;
+  line-height: 1.2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    height: 0.5px;
+    width: 100%;
+    background-color: $dark-green;
+  }
+
+  :hover,
+  :focus {
+    color: $button-green;
+  }
+}
+
+.copyright__text {
+  font-size: 10px;
+  line-height: 1.2;
+}

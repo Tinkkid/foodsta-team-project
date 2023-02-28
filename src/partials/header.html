@@ -1,0 +1,43 @@
+<header class="fixed-header">
+  <div class="container header__container">
+    <div class="logo header__logo">
+      <a href="index.html" class="logo__link">
+        <svg width="66" height="52">
+          <use href="./images/icons.svg#icon-logo"></use>
+        </svg>
+      </a>
+    </div>
+    <button class="js-open-menu" type="button" aria-expanded="false" aria-controls="header__nav">
+      <svg class="js-open-menu__icon" width="28" height="28">
+        <use href="./images/icons.svg#icon-gg_menu"></use>
+      </svg>
+    </button>
+    <div class="menu-container js-menu-container" id="header__nav">
+      <button class="js-close-menu" type="button">
+        <svg width="30" height="30">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <nav class="nav header__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link nav__link--bgc-green">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link nav__link--bgc-green">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#favorites" class="nav__link nav__link--bgc-green">Favorites</a>
+          </li>
+          <li class="nav__item">
+            <a href="#feedback" class="nav__link nav__link--bgc-green">Feedback</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link nav__link--bgc-green">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="button header__button modal-open-button" type="button">Order Now</button>
+    </div>
+  </div>
+</header>

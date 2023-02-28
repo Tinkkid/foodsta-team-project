@@ -1,0 +1,140 @@
+.section_customers {
+  background-image: url('../images/customers_mob_1x_320.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @media screen and (min-width: $mobile) {
+    background-image: url('../images/customers-mob_1x_480.png');
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: url('../images/customers_tab_1x_768.png');
+    padding-bottom: 120px;
+    padding-top: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 100px;
+    padding-bottom: 200px;
+    background-image: url('../images/customers_desk_1x_1280.png');
+  }
+}
+
+.title_customers {
+  font-size: 28px;
+  line-height: 1.17;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: $custom-black;
+
+  @include tablet {
+    font-size: 42px;
+    line-height: 1.16;
+  }
+}
+
+.paragraf_customers {
+  margin-bottom: 32px;
+}
+
+.reviews_first {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.reviews_item {
+  background-color: #ffffff;
+  margin-bottom: 24px;
+  border-radius: 0px 30px 30px 30px;
+  padding: 8px;
+
+  &:nth-child(2n) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 12px;
+    margin-right: 32px;
+    width: 336px;
+    margin-bottom: 0;
+
+    &:not(:first-child) {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 14px;
+    width: 501px;
+    margin-right: 139px;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.reviews_icon {
+  display: flex;
+  flex-direction: row;
+}
+
+.reviews_svg {
+  margin-right: 4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.reviews_paragraf {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.1875;
+  margin-top: 28px;
+  color: $custom-black;
+
+  @include tablet {
+    font-size: 18px;
+    line-height: 1.16;
+  }
+}
+
+.people {
+  display: flex;
+  margin-top: 40px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.people_img {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+
+.about {
+  border-right: 0.854167px solid #7eb101;
+  padding-right: 15px;
+}
+
+.about_name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 2px;
+  color: $custom-black;
+
+  @include desktop {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.about_nick {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $custom-black;
+}

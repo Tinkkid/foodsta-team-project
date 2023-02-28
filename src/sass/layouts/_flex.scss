@@ -1,0 +1,12 @@
+@mixin flex-container($fd, $ai, $jc, $cg: unset, $rg: unset) {
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction: $fd;
+
+  align-items: $ai;
+  justify-content: $jc;
+
+  column-gap: $cg;
+  row-gap: $rg;
+}
